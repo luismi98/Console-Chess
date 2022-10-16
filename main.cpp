@@ -1,19 +1,18 @@
 ﻿/*
-Luis Fernandez - 30 April           Final Project - CHESS GAME
-The operative system used is Windows. The code is compiled with Visual Studio 2019 with C++17.
+Luis Fernandez - 30 April 2020
+The operative system used is Windows. The code was written for C++17.
 
 This code correctly implements: 
     -The allowed moves for all the chess pieces
-    -Piece captures and a cemetery
-    -History of moves
-    -Visually appealing output of the game (board, history of moves and cemetery of captured pieces)
+    -Piece captures
+    -Check, checkmate and stalemate
+    -History of moves and a cemetery
 The user is allowed to:
     -Get all the allowed moves for the pieces of a certain colour
     -Select a piece (which gets highlighted in the board) and:
         -Get its allowed moves
         -Move it
         -Change piece selection
-This code does not implement 'check'. The game ends when either of the kings is captured.
 */
 
 #include "piece.h"

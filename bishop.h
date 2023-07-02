@@ -1,5 +1,5 @@
 /*
-Luis Fernandez - 10 April
+Luis Fernandez - 10 April 2020
 Declaration of bishop piece. It overloads the pure virtual functions of the piece abstract base class.
 It has a default and a parametrised constructor, as well as a destructor.
 */

@@ -1,5 +1,5 @@
 ﻿/*
-Luis Fernandez - 25 April
+Luis Fernandez - 25 April 2020
 This file contains the implementation of the rook class. Its starting position is in column 'a' or 'h'.
 It can move along straight lines along rows and columns.
 */

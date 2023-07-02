@@ -1,5 +1,5 @@
 ﻿/*
-Luis Fernandez - 11 April
+Luis Fernandez - 11 April 2020
 This file contains the implementation of the pawn class. Its starting position may be in any column.
 It can move forward (by 2 if in the starting position) and diagonally if it can capture a piece.
 */

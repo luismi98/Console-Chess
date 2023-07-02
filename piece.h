@@ -1,4 +1,4 @@
-//Luis Fernandez - 30 March
+//Luis Fernandez - 30 March 2020
 //This code contains the declaration of the abstract base class piece, interface for all pieces.
 //The virtual member functions are those to return the allowed moves and the piece symbol as a string
 

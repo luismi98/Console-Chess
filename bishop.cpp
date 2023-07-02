@@ -1,5 +1,5 @@
 ﻿/*
-Luis Fernandez - 25 April
+Luis Fernandez - 25 April 2020
 Implementation of the bishop piece. Its starting position is in column 'c' or 'f'.
 It can move in diagonal lines. 
 */

@@ -1,5 +1,5 @@
 /*
-Luis Fernandez - 30 April
+Luis Fernandez - 30 April 2020
 This file contains the declaration of the board class. It contains the pieces. The member functions are designed so that
 the member functions of the pieces can be accessed from this class.
 */

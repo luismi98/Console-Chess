@@ -1,5 +1,5 @@
 ﻿/*
-Luis Fernandez - 20 April
+Luis Fernandez - 20 April 2020
 This file contains the implementation of the queen class. Its starting position is in column 'd'.
 The char column parameter in the constructor was set so that the template function in the board constructor
 to fill the vector of pieces can be used.

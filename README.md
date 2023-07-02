@@ -4,3 +4,5 @@ For explanation of the code, see the report:
 https://drive.google.com/drive/folders/1jGqDCFcHTDS0NsEhzOHC1d2sL1DDJWY1
 
 Note the report states the code does not implement "check". However, that is because it was written before it was actually implemented. The code does implement "check", "checkmate" and "stalemate".
+
+All the code was written between March and June 2020

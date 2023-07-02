@@ -1,5 +1,5 @@
 /*
-Luis Fernandez - 26 March
+Luis Fernandez - 26 March 2020
 This code contains the declaration of the dictionaries used to transform from alphabetical to numerical column notation,
 as well as functions to convert from location in 8x8 board matrix to 1D array and viceversa. 
 */

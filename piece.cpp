@@ -1,5 +1,5 @@
 ﻿/*
-Luis Fernandez - 30 March
+Luis Fernandez - 30 March 2020
 This code contains the implementation of the abstract base class piece, interface for all pieces.
 */
 

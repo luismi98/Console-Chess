@@ -1,5 +1,5 @@
 ﻿/*
-Luis Fernandez - 25 April
+Luis Fernandez - 25 April 2020
 Implementation of the knight piece. Its starting position is in column 'b' or 'g'
 It can move in L-shapes as will be described below.
 */

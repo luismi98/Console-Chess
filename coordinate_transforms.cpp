@@ -1,4 +1,4 @@
-//Luis Fernandez - 26 March
+//Luis Fernandez - 26 March 2020
 //This code contains the implementation of functions used to convert from location in 8x8 board matrix to 1D array and viceversa.
 
 #include "coordinate_transforms.h"

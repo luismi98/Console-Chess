@@ -31,7 +31,6 @@ namespace {
 }
 
 board::board() try : pieces_ingame(32) { //memory reservation
-    //std::cout << "Board default constructor called." << std::endl;
     fill_pieces_column<rook>(pieces_ingame, 1);
     fill_pieces_column<knight>(pieces_ingame, 2);
     fill_pieces_column<bishop>(pieces_ingame, 3);
@@ -70,7 +69,6 @@ catch (const std::exception&) {
     throw;
 }
 board::~board() {
-    //std::cout << "Destructor of board called." << std::endl;
     pieces_map.clear();
 }
 board_occupation board::get_element(const int& element) const {

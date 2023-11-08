@@ -15,6 +15,7 @@ It can move forward (by 2 positions if in the starting position, otherwise 1) or
 pawn::pawn() {
     //std::cout << "Pawn default constructor called." << std::endl;
 }
+
 pawn::pawn(const char& column, const piece_colour& colour_in) {
     //std::cout << "Pawn parametrised constructor called." << std::endl;
     try {
@@ -31,9 +32,11 @@ pawn::pawn(const char& column, const piece_colour& colour_in) {
     location.second = (colour == piece_colour::white) ? 2 : 7; //Only depends on colour
     symbol = piece_symbol::pawn;
 }
+
 pawn::~pawn() {
     //std::cout << "Destructor of pawn of colour " << colour_string_map.at(colour) << " called at position " << location.first << location.second << "." << std::endl;
 }
+
 std::list<int> pawn::get_allowed_moves(const std::array<board_occupation, 64>& board_matrix) const {
     std::list<int> allowed_moves;
     int current_location{ coordinates::flatten_board_coordinates(location) };
@@ -64,6 +67,7 @@ std::list<int> pawn::get_allowed_moves(const std::array<board_occupation, 64>& b
     }
     return allowed_moves;
 }
+
 std::string pawn::get_symbol_string(const bool& on_white_tile) const noexcept {
     if (on_white_tile) {
         return (colour == piece_colour::white) ? u8"♙" : u8"♟";

@@ -14,6 +14,7 @@ It can move in L-shapes as will be described below.
 knight::knight() {
     //std::cout << "Knight default constructor called." << std::endl;
 }
+
 knight::knight(const char& column, const piece_colour& colour_in) {
     //std::cout << "Knight parametrised constructor called." << std::endl;
     try {
@@ -33,9 +34,11 @@ knight::knight(const char& column, const piece_colour& colour_in) {
     location.second = (colour == piece_colour::white) ? 1 : 8;
     symbol = piece_symbol::knight;
 }
+
 knight::~knight() {
     //std::cout << "Destructor of knight of colour " << colour_string_map.at(colour) << " called at position " << location.first << location.second << "." << std::endl;
 }
+
 std::list<int> knight::get_allowed_moves(const std::array<board_occupation, 64>& board_matrix) const {
     std::list<int> allowed_moves;
     piece_colour colour_opposite{ opposite_colour.at(colour) };
@@ -67,6 +70,7 @@ std::list<int> knight::get_allowed_moves(const std::array<board_occupation, 64>&
     }
     return allowed_moves;
 }
+
 std::string knight::get_symbol_string(const bool& on_white_tile) const noexcept {
     if (on_white_tile) {
         return (colour == piece_colour::white) ? u8"♘" : u8"♞";

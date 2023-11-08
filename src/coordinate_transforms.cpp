@@ -27,6 +27,7 @@ namespace coordinates {
         }
         return 8 * (matrix_row - 1) + matrix_column; //location from 1 to 64
     }
+    
     std::pair<char, int> to_board_coordinates(const int& location) {
         if (location < 1 || location > 64) {
             throw std::out_of_range("Error: location along 1D array must be in range from 1 to 64.");

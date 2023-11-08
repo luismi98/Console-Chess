@@ -68,21 +68,25 @@ catch (const std::exception&) {
     std::cerr << "Exception caught on board constructor." << std::endl;
     throw;
 }
+
 board::~board() {
     pieces_map.clear();
 }
+
 board_occupation board::get_element(const int& element) const {
     if (element < 1 || element > 64) {
         throw std::out_of_range("Error: element of board matrix to get must be in range from 1 to 64.");
     }
     return board_matrix.at(element - 1);
 }
+
 board_occupation& board::set_element(const int& element) {
     if (element < 1 || element > 64) {
         throw std::out_of_range("Error: element of board matrix to set must be in range from 1 to 64.");
     }
     return board_matrix.at(element - 1);
 }
+
 std::list<std::string> board::get_all_pieces_allowed_moves(const piece_colour& colour_turn, const bool& last_move_check, const int& last_move) const {
     std::list<std::pair<char, int>> all_current_locations;
     std::list<int> all_allowed_future_locations;
@@ -119,6 +123,7 @@ std::list<std::string> board::get_all_pieces_allowed_moves(const piece_colour& c
     all_allowed_moves_string.sort();
     return all_allowed_moves_string;
 }
+
 bool board::check_for_check(const std::pair<char, int>& last_move_opposite_team, bool& last_move_check) {
     if (pieces_map.count(last_move_opposite_team) == 0) {
         throw std::out_of_range("The specified piece of opposite colour that last moved does not exist!");
@@ -176,6 +181,7 @@ bool board::check_for_check(const std::pair<char, int>& last_move_opposite_team,
     }
     return false;
 }
+
 std::list<int> board::get_piece_allowed_moves(const std::pair<char, int>& piece_board_coords, const bool& last_move_check, const int& last_move) const {
     if (pieces_map.count(piece_board_coords) == 0) {
         throw std::out_of_range("Error: no piece to get allowed moves was found at the specified board coordinates.");
@@ -260,6 +266,7 @@ std::list<int> board::get_piece_allowed_moves(const std::pair<char, int>& piece_
     }
     return allowed_moves_reduced;
 }
+
 void board::set_piece_location(const std::pair<char, int>& old_piece_coords, const std::pair<char, int>& new_piece_coords) {
     if (pieces_map.count(old_piece_coords) == 0){
         throw std::out_of_range("Error: no piece to set location was found at the specified board coordinates.");
@@ -280,6 +287,7 @@ piece_symbol board::capture_piece(const std::pair<char, int>& new_piece_coords, 
     pieces_map.erase(new_piece_coords);
     return cemetery.back()->get_symbol();
 }
+
 void board::store_move(const std::pair<char, int>& new_piece_coords) {
     if (pieces_map.count(new_piece_coords) == 0) {
         throw std::out_of_range("Error: no moved piece to store move was found at the specified board coordinates.");
@@ -291,6 +299,7 @@ void board::store_move(const std::pair<char, int>& new_piece_coords) {
     moves_history.push_back(move_stringstream.str());
     move_stringstream.str(""); //clear ostringstream
 }
+
 void board::show(const font& chosen_font, const piece_colour& colour_turn, const bool& check) const {
     std::cout << "   ";
     for (size_t letter_index{}; letter_index < 8; letter_index++) {
@@ -395,6 +404,7 @@ void board::show(const font& chosen_font, const piece_colour& colour_turn, const
     }
     std::cout << std::endl << std::endl;
 }
+
 void board::show(const font& chosen_font, const piece_colour& colour_turn, const std::pair<char, int>& selected_piece_coords, const bool& check) const {
     //Most of the code in this function is identical to the other overload above, so the appropriate comments can be found there.
     //The difference is that this function takes as argument the board coordinates of a selected piece to highlight it

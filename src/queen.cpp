@@ -17,6 +17,7 @@ It combines the allowed moves of the rook and bishop.
 queen::queen() {
     //std::cout << "Queen default constructor called." << std::endl;
 }
+
 queen::queen(const char& column, const piece_colour& colour_in) {
     //std::cout << "Queen parametrised constructor called." << std::endl;
     try {
@@ -36,9 +37,11 @@ queen::queen(const char& column, const piece_colour& colour_in) {
     location.second = (colour == piece_colour::white) ? 1 : 8;
     symbol = piece_symbol::queen;
 }
+
 queen::~queen() {
     //std::cout << "Destructor of queen of colour " << colour_string_map.at(colour) << " called at position " << location.first << location.second << "." << std::endl;
 }
+
 std::list<int> queen::get_allowed_moves(const std::array<board_occupation, 64>& board_matrix) const {
     std::list<int> allowed_moves;
     piece_colour colour_opposite{ opposite_colour.at(colour) };
@@ -71,6 +74,7 @@ std::list<int> queen::get_allowed_moves(const std::array<board_occupation, 64>& 
 
     return allowed_moves;
 }
+
 std::string queen::get_symbol_string(const bool& on_white_tile) const noexcept {
     if (on_white_tile) {
         return (colour == piece_colour::white) ? u8"♕" : u8"♛";

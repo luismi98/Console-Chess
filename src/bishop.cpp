@@ -15,6 +15,7 @@ It can move in diagonal lines.
 bishop::bishop() {
     //std::cout << "Bishop default constructor called." << std::endl;
 }
+
 bishop::bishop(const char& column, const piece_colour& colour_in) {
     //std::cout << "Bishop parametrised constructor called." << std::endl;
     try {
@@ -34,9 +35,11 @@ bishop::bishop(const char& column, const piece_colour& colour_in) {
     location.second = (colour == piece_colour::white) ? 1 : 8;
     symbol = piece_symbol::bishop;
 }
+
 bishop::~bishop() {
     //std::cout << "Destructor of bishop of colour " << colour_string_map.at(colour) << " called at position " << location.first << location.second << "." << std::endl;
 }
+
 std::list<int> bishop::get_allowed_moves(const std::array<board_occupation, 64>& board_matrix) const {
     std::list<int> allowed_moves;
     piece_colour colour_opposite{ opposite_colour.at(colour) };
@@ -57,6 +60,7 @@ std::list<int> bishop::get_allowed_moves(const std::array<board_occupation, 64>&
 
     return allowed_moves;
 }
+
 std::string bishop::get_symbol_string(const bool& on_white_tile) const noexcept {
     if (on_white_tile) {
         return (colour == piece_colour::white) ? u8"♗" : u8"♝";

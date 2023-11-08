@@ -17,6 +17,7 @@ The king can move by one tile in all directions.
 king::king() {
     //std::cout << "King default constructor called." << std::endl;
 }
+
 king::king(const char& column, const piece_colour& colour_in) {
     //std::cout << "King parametrised constructor called." << std::endl;
     try {
@@ -36,9 +37,11 @@ king::king(const char& column, const piece_colour& colour_in) {
     location.second = (colour == piece_colour::white) ? 1 : 8;
     symbol = piece_symbol::king;
 }
+
 king::~king() {
     //std::cout << "Destructor of king of colour " << colour_string_map.at(colour) << " called at position " << location.first << location.second << "." << std::endl;
 }
+
 std::list<int> king::get_allowed_moves(const std::array<board_occupation, 64>& board_matrix) const {
     std::list<int> allowed_moves;
     piece_colour colour_opposite{ opposite_colour.at(colour) };
@@ -65,6 +68,7 @@ std::list<int> king::get_allowed_moves(const std::array<board_occupation, 64>& b
     }
     return allowed_moves;
 }
+
 std::string king::get_symbol_string(const bool& on_white_tile) const noexcept {
     if (on_white_tile) {
         return (colour == piece_colour::white) ? u8"♔" : u8"♚";

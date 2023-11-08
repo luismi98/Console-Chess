@@ -16,6 +16,7 @@ It can move along straight lines along rows and columns.
 rook::rook() {
     //std::cout << "Rook default constructor called." << std::endl;
 }
+
 rook::rook(const char& column, const piece_colour& colour_in) {
     //std::cout << "Rook parametrised constructor called." << std::endl;
     try {
@@ -35,9 +36,11 @@ rook::rook(const char& column, const piece_colour& colour_in) {
     location.second = (colour == piece_colour::white) ? 1 : 8; //Starting row only depends in colour of piece
     symbol = piece_symbol::rook;
 }
+
 rook::~rook() {
     //std::cout << "Destructor of rook of colour " << colour_string_map.at(colour) << " called at position " << location.first << location.second << "." << std::endl;
 }
+
 std::list<int> rook::get_allowed_moves(const std::array<board_occupation, 64>& board_matrix) const {
     std::list<int> allowed_moves;
     piece_colour colour_opposite{ opposite_colour.at(colour) };
@@ -58,6 +61,7 @@ std::list<int> rook::get_allowed_moves(const std::array<board_occupation, 64>& b
 
     return allowed_moves;
 }
+
 std::string rook::get_symbol_string(const bool& on_white_tile) const noexcept {
     if (on_white_tile) {
         return (colour == piece_colour::white) ? u8"♖" : u8"♜";

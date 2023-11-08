@@ -13,6 +13,7 @@ enum class piece_colour : int {
 	white, //0
 	black, //1
 };
+
 enum class piece_symbol : int {
 	pawn, //0
 	rook, //1
@@ -21,11 +22,13 @@ enum class piece_symbol : int {
 	king, //4
 	queen, //5
 };
+
 enum class board_occupation : int {
 	empty = -1, //-1
 	white_piece, //0
 	black_piece, //1
 };
+
 const std::map<piece_colour, piece_colour> opposite_colour{ {piece_colour::white,piece_colour::black},
 															{piece_colour::black, piece_colour::white} };
 const std::map<piece_colour, std::string> colour_string_map{ {piece_colour::white,"white"},

@@ -15,14 +15,17 @@ piece::piece() {
     //std::cout << "Piece default constructor called." << std::endl;
     number_of_pieces++;
 }
+
 piece::~piece() {
     number_of_pieces--;
     //std::cout << "Destructor of base class piece at location " << location.first << location.second 
     //    << " called. Number of pieces: " << number_of_pieces << "." << std::endl;
 }
+
 std::pair<char, int> piece::get_location() const noexcept {
     return location;
 }
+
 void piece::set_to_location(const int& new_location, const std::array<board_occupation, 64>& board_matrix) {
     if (new_location < 1 || new_location > 64) {
         throw std::out_of_range("Error: new location must be a number between 1 and 64.");
@@ -37,9 +40,11 @@ void piece::set_to_location(const int& new_location, const std::array<board_occu
     }
     location = coordinates::to_board_coordinates(new_location); //Convert int to board coodinates
 }
+
 piece_colour piece::get_colour() const noexcept {
     return colour;
 }
+
 piece_symbol piece::get_symbol() const noexcept {
     return symbol;
 }

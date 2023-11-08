@@ -34,13 +34,11 @@ The user is allowed to:
 #include <map>
 #include <functional>
 #include <exception>
-#include <Windows.h>
 
 using board_coordinates_t = std::pair<char, int>;
 
 int main()
 {
-    SetConsoleOutputCP(65001); //Code Page Identifier for UTF-8
     change_font_colour(font_colour::white);
     std::cout << "Welcome to this console CHESS game. This program uses Unicode symbols for better visualisation. "
         << "Please change the console font to NSimSun or MS Gothic before playing. This can be done by clicking on the top left corner of the console "

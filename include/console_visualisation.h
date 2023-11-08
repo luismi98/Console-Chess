@@ -9,7 +9,6 @@ Symbols which do not change depending on font are also defined as constants.
 #ifndef CONSOLE_VISUALISATION_H
 #define CONSOLE_VISUALISATION_H
 
-#include <Windows.h>
 #include <map>
 #include <string>
 
